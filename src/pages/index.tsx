@@ -37,7 +37,7 @@ const Home: NextPage = () => {
 					</Link>
 
 					<Link
-						href="https://github.com/vercel/next.js/tree/canary/examples"
+						href="/Products"
 						className={styles.card}
 					>
 						<h2>Examples &rarr;</h2>
