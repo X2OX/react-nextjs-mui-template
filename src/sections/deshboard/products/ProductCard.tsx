@@ -3,7 +3,6 @@ import { styled } from '@mui/material/styles';
 import Link from "$components/Link";
 import Label from '$components/Label';
 import {Product} from "$pages/api/product";
-// import { ColorPreview } from '../../../components/color-utils';
 
 interface props{
     product:Product
@@ -49,7 +48,6 @@ export default function ProductCard({ product }:props) {
                 </Link>
 
                 <Stack direction="row" alignItems="center" justifyContent="space-between">
-                    {/*<ColorPreview colors={colors} />*/}
                     <Typography variant="subtitle1">
                         <Typography
                             component="span"
