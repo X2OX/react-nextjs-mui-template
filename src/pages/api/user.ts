@@ -4,7 +4,7 @@ import {NextApiRequest, NextApiResponse} from "next";
 
 const users: Users[] = [...Array(24)].map((_, index) => ({
     id: new UUID().toString(),
-    avatarUrl: `/static/avatars/avatar_${index + 1}.jpg`,
+    avatarUrl: `/static/avatar/avatar_${index + 1}.jpg`,
     name: randomArr([
         'Tom',
         'Jerry',
