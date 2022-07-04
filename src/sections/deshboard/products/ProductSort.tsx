@@ -11,14 +11,8 @@ const SORT_BY_OPTIONS = [
 
 export default function ProductSort() {
     const [open, setOpen] = useState<any>(null);
-
-    const handleOpen = (event: MouseEvent<HTMLButtonElement>) => {
-        setOpen(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setOpen(null);
-    };
+    const handleOpen = (event: MouseEvent<HTMLButtonElement>) => setOpen(event.currentTarget);
+    const handleClose = () => setOpen(null);
 
     return (
         <>

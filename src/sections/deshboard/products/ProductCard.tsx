@@ -17,7 +17,7 @@ const ProductImgStyle = styled('img')({
 });
 
 export default function ProductCard({product}: props) {
-    const {name, price, colors, status, priceSale, cover} = product;
+    const {name, price, status, priceSale, cover} = product;
 
     return (
         <Card>

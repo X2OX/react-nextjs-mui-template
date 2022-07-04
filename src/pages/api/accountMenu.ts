@@ -2,22 +2,21 @@ import {NextApiRequest, NextApiResponse} from "next";
 
 export default function MenuOptions(
     req: NextApiRequest,
-    res: NextApiResponse){
+    res: NextApiResponse) {
     res.status(200).json({
-        data:options,
-        code:0,
-        msg:''
+        data: options,
+        code: 0,
+        msg: ''
     })
 }
 
-export interface MenuOptions{
-    label:string
-    icon:string
-    linkTo:string
+export interface MenuOptions {
+    label: string
+    icon: string
+    linkTo: string
 }
 
-
-const options:MenuOptions[] = [
+const options: MenuOptions[] = [
     {
         label: 'Home',
         icon: 'eva:home-fill',

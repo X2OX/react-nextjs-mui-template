@@ -6,7 +6,6 @@ import ProductSort from "$sections/deshboard/products/ProductSort";
 import {Product} from "$pages/api/product";
 import {RequestData} from "$client/request";
 
-
 export default function EcommerceShop() {
     const {data} = useSWR('/api/product', RequestData<Product>)
     return (
@@ -19,9 +18,7 @@ export default function EcommerceShop() {
                 <Stack direction="row" flexWrap="wrap-reverse" alignItems="center" justifyContent="flex-end"
                        sx={{mb: 5}}>
                     <Stack direction="row" spacing={1} flexShrink={0} sx={{my: 1}}>
-
                         <ProductSort/>
-
                     </Stack>
                 </Stack>
 

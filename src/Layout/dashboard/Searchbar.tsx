@@ -4,7 +4,6 @@ import {Button, IconButton, Input, InputAdornment, Slide} from '@mui/material';
 import ClickAwayListener from '@mui/base/ClickAwayListener';
 import Iconify from '$components/Iconify';
 
-
 const SearchbarStyle = styled('div')(({theme}) => ({
     top: 0,
     left: 0,
@@ -26,9 +25,7 @@ const SearchbarStyle = styled('div')(({theme}) => ({
 
 export default function Searchbar() {
     const [isOpen, setOpen] = useState(false);
-
     const handleOpen = () => setOpen((prev) => !prev);
-
     const handleClose = () => setOpen(false);
 
     return (

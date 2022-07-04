@@ -10,13 +10,9 @@ import {MenuOptions} from "$pages/api/accountMenu";
 export default function AccountPopover() {
     const {data} = useSWR('/api/account', RequestDataOrdinary<AccountType>)
     const {data: menu} = useSWR('/api/accountMenu', RequestData<MenuOptions>)
-
     const anchorRef = useRef(null);
-
     const [open, setOpen] = useState<any>(null);
-
     const handleOpen = (event: MouseEvent<HTMLButtonElement>) => setOpen(event.currentTarget);
-
     const handleClose = () => setOpen(null);
 
     return (
