@@ -4,7 +4,7 @@ import useSWR from 'swr';
 import ProductList from "$sections/deshboard/products/ProductList";
 import ProductSort from "$sections/deshboard/products/ProductSort";
 import {Product} from "$pages/api/product";
-import RequestData from "$client/request";
+import { RequestData } from "$client/request";
 
 
 export default function EcommerceShop() {
