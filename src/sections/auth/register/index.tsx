@@ -1,9 +1,7 @@
 import {useState} from 'react';
 import {Form, FormikProvider, useFormik} from 'formik';
-
 import {IconButton, InputAdornment, Stack, TextField} from '@mui/material';
 import {LoadingButton} from '@mui/lab';
-
 import Iconify from '$components/Iconify';
 
 export default function RegisterForm() {

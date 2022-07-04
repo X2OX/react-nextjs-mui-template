@@ -1,11 +1,11 @@
-import { Box, Card, Typography, Stack } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import {Box, Card, Stack, Typography} from '@mui/material';
+import {styled} from '@mui/material/styles';
 import Link from "$components/Link";
 import Label from '$components/Label';
 import {Product} from "$pages/api/product";
 
-interface props{
-    product:Product
+interface props {
+    product: Product
 }
 
 const ProductImgStyle = styled('img')({
@@ -16,12 +16,12 @@ const ProductImgStyle = styled('img')({
     position: 'absolute',
 });
 
-export default function ProductCard({ product }:props) {
-    const { name, price, colors, status, priceSale,cover } = product;
+export default function ProductCard({product}: props) {
+    const {name, price, colors, status, priceSale, cover} = product;
 
     return (
         <Card>
-            <Box sx={{ pt: '100%', position: 'relative' }}>
+            <Box sx={{pt: '100%', position: 'relative'}}>
                 {status && (
                     <Label
                         variant="filled"
@@ -37,10 +37,10 @@ export default function ProductCard({ product }:props) {
                         {status}
                     </Label>
                 )}
-                <ProductImgStyle alt={name} src={cover} />
+                <ProductImgStyle alt={name} src={cover}/>
             </Box>
 
-            <Stack spacing={2} sx={{ p: 3 }}>
+            <Stack spacing={2} sx={{p: 3}}>
                 <Link href="#" color="inherit" underline="hover">
                     <Typography variant="subtitle2" noWrap>
                         {name}
@@ -57,7 +57,7 @@ export default function ProductCard({ product }:props) {
                                 textDecoration: 'line-through',
                             }}
                         >
-                            {priceSale }
+                            {priceSale}
                         </Typography>
                         &nbsp;
                         {price}

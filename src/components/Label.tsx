@@ -8,18 +8,18 @@ const RootStyle = ({color, variant}: RootStyleProps) => styled('span')(({theme})
 		color: theme.palette[color].contrastText,
 		backgroundColor: theme.palette[color].main
 	});
-	
+
 	const styleOutlined = (color: colorType) => ({
 		color: theme.palette[color].main,
 		backgroundColor: 'transparent',
 		border: `1px solid ${theme.palette[color].main}`
 	});
-	
+
 	const styleGhost = (color: colorType) => ({
 		color: theme.palette[color].dark,
 		backgroundColor: alpha(theme.palette[color].main, 0.16)
 	});
-	
+
 	return {
 		height: 22,
 		minWidth: 22,
@@ -36,7 +36,7 @@ const RootStyle = ({color, variant}: RootStyleProps) => styled('span')(({theme})
 		fontFamily: theme.typography.fontFamily,
 		backgroundColor: theme.palette.grey[300],
 		fontWeight: theme.typography.fontWeightBold,
-		
+
 		...({
 			...(variant === 'filled' && {...styleFilled(color)}),
 			...(variant === 'outlined' && {...styleOutlined(color)}),
