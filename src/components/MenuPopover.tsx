@@ -20,14 +20,16 @@ const ArrowStyle = styled('span')(({theme}) => ({
 }));
 
 interface Props {
-	children: React.ReactElement,
+	children: React.ReactNode,
 	sx?: SxProps,
+	open: boolean;
+	anchorEl: any;
+	onClose: () => void
 }
 
-export default function MenuPopover({children, sx, ...other}: Props) {
+export default function MenuPopover({children, sx, open ,anchorEl ,onClose}: Props) {
 	return (
 		<Popover
-			open={true}
 			anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
 			transformOrigin={{vertical: 'top', horizontal: 'right'}}
 			PaperProps={{
@@ -38,9 +40,11 @@ export default function MenuPopover({children, sx, ...other}: Props) {
 					...sx,
 				},
 			}}
-			{...other}        >
+			open={open}
+			anchorEl={anchorEl}
+			onClose={onClose}>
 			<ArrowStyle className="arrow"/>
-			
+
 			{children}
 		</Popover>
 	);
