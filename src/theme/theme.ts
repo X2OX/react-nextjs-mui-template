@@ -5,7 +5,6 @@ import typography from './typography';
 import {Theme} from "@mui/system";
 import ComponentsOverrides from "$theme/overrides";
 
-
 const genTheme = (): Theme => {
 	const t = createTheme({
 		palette,
@@ -14,7 +13,7 @@ const genTheme = (): Theme => {
 		shadows,
 	})
 	t.components = ComponentsOverrides(t)
-	
+
 	return t
 }
 

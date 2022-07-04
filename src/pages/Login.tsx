@@ -51,24 +51,23 @@ const ContentStyle = styled('div')(({theme}) => ({
 export default function Login() {
 	const smUp = useResponsive('up', 'sm');
 	const mdUp = useResponsive('up', 'md');
-	
+
 	return (
 		<Page title="Login">
 			<RootStyle>
 				<HeaderStyle>
 					<Logo/>
-					
+
 					{smUp && (
 						<Typography variant="body2" sx={{mt: {md: -2}}}>
 							Don’t have an account? {''}
-							
 							<Link variant="subtitle2" href="/Register">
 								Get started
 							</Link>
 						</Typography>
 					)}
 				</HeaderStyle>
-				
+
 				{mdUp && (
 					<SectionStyle>
 						<Typography variant="h3" sx={{px: 5, mt: 10, mb: 5}}>
@@ -77,19 +76,19 @@ export default function Login() {
 						<img src="/static/illustrations/illustration_login.png" alt="login"/>
 					</SectionStyle>
 				)}
-				
+
 				<Container maxWidth="sm">
 					<ContentStyle>
 						<Typography variant="h4" gutterBottom>
 							Sign in to Minimal
 						</Typography>
-						
+
 						<Typography sx={{color: 'text.secondary', mb: 5}}>Enter your details below.</Typography>
-						
+
 						<AuthSocial/>
-						
+
 						<LoginForm/>
-						
+
 						{!smUp && (
 							<Typography variant="body2" align="center" sx={{mt: 3}}>
 								Don’t have an account?{' '}

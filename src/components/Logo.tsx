@@ -10,11 +10,10 @@ interface Props {
 
 export default function Logo({disabledLink = false, sx}: Props) {
 	const theme = useTheme();
-	
 	const PRIMARY_LIGHT = theme.palette.primary.light;
 	const PRIMARY_MAIN = theme.palette.primary.main;
 	const PRIMARY_DARK = theme.palette.primary.dark;
-	
+
 	const logo = (
 		<Box sx={{width: 40, height: 40, ...sx}}>
 			<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 512 512">
@@ -32,7 +31,7 @@ export default function Logo({disabledLink = false, sx}: Props) {
 						<stop offset="100%" stopColor={PRIMARY_MAIN}/>
 					</linearGradient>
 				</defs>
-				
+
 				<g fill={PRIMARY_MAIN} fillRule="evenodd" stroke="none" strokeWidth="1">
 					<path
 						fill="url(#BG1)"
@@ -50,10 +49,10 @@ export default function Logo({disabledLink = false, sx}: Props) {
 			</svg>
 		</Box>
 	);
-	
+
 	if (disabledLink) {
 		return <>{logo}</>;
 	}
-	
+
 	return <Link href="/">{logo}</Link>;
 }

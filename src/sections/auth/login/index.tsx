@@ -7,7 +7,7 @@ import Link from "$components/Link";
 
 export default function LoginForm() {
 	const [showPassword, setShowPassword] = useState(false);
-	
+
 	const formik = useFormik({
 		initialValues: {
 			email: '',
@@ -18,13 +18,10 @@ export default function LoginForm() {
 			window.location.href = "/"
 		},
 	});
-	
+
 	const {errors, touched, values, isSubmitting, handleSubmit, getFieldProps} = formik;
-	
-	const handleShowPassword = () => {
-		setShowPassword((show) => !show);
-	};
-	
+	const handleShowPassword = () => setShowPassword((show) => !show);
+
 	return (
 		<FormikProvider value={formik}>
 			<Form autoComplete="off" noValidate onSubmit={handleSubmit}>
@@ -38,7 +35,7 @@ export default function LoginForm() {
 						error={Boolean(touched.email && errors.email)}
 						helperText={touched.email && errors.email}
 					/>
-					
+
 					<TextField
 						fullWidth
 						autoComplete="current-password"
@@ -58,18 +55,18 @@ export default function LoginForm() {
 						helperText={touched.password && errors.password}
 					/>
 				</Stack>
-				
+
 				<Stack direction="row" alignItems="center" justifyContent="space-between" sx={{my: 2}}>
 					<FormControlLabel
 						control={<Checkbox {...getFieldProps('remember')} checked={values.remember}/>}
 						label="Remember me"
 					/>
-					
+
 					<Link href={"/"} variant="subtitle2" underline="hover">
 						Forgot password?
 					</Link>
 				</Stack>
-				
+
 				<LoadingButton fullWidth size="large" type="submit" variant="contained" loading={isSubmitting}>
 					Login
 				</LoadingButton>
