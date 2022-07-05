@@ -87,94 +87,96 @@ export default function User() {
     const handleFilterByName = (event: React.ChangeEvent<HTMLInputElement>) => setFilterName(event.target.value);
 
     return (
-        <Page title="User">
-            <Container>
-                <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
-                    <Typography variant="h4" gutterBottom>
-                        User
-                    </Typography>
-                    <Button
-                        startIcon={<Iconify icon="eva:plus-fill"/>}>
-                        New User
-                    </Button>
-                </Stack>
+        <>
+            <Page title="User">
+                <Container>
+                    <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
+                        <Typography variant="h4" gutterBottom>
+                            User
+                        </Typography>
+                        <Button
+                            startIcon={<Iconify icon="eva:plus-fill"/>}>
+                            New User
+                        </Button>
+                    </Stack>
 
-                <Card>
-                    <UserListToolbar numSelected={selected.length} filterName={filterName}
-                                     onFilterName={handleFilterByName}/>
+                    <Card>
+                        <UserListToolbar numSelected={selected.length} filterName={filterName}
+                                         onFilterName={handleFilterByName}/>
 
-                    <TableContainer sx={{minWidth: 800}}>
-                        <Table>
-                            <UserListHead
-                                order={order}
-                                orderBy={orderBy}
-                                headLabel={TABLE_HEAD}
-                                rowCount={data?.data?.length!}
-                                numSelected={selected.length}
-                                onRequestSort={handleRequestSort}
-                                onSelectAllClick={handleSelectAllClick}
-                            />
-                            <TableBody>
-                                {data?.data?.map((row: any) => {
-                                    const {id, name, role, status, country, avatarUrl, isVerified} = row;
-                                    const isItemSelected = selected.indexOf(name) !== -1;
+                        <TableContainer sx={{minWidth: 800}}>
+                            <Table>
+                                <UserListHead
+                                    order={order}
+                                    orderBy={orderBy}
+                                    headLabel={TABLE_HEAD}
+                                    rowCount={data?.data?.length!}
+                                    numSelected={selected.length}
+                                    onRequestSort={handleRequestSort}
+                                    onSelectAllClick={handleSelectAllClick}
+                                />
+                                <TableBody>
+                                    {data?.data?.map((row: any) => {
+                                        const {id, name, role, status, country, avatarUrl, isVerified} = row;
+                                        const isItemSelected = selected.indexOf(name) !== -1;
 
-                                    return (
-                                        <TableRow
-                                            hover
-                                            key={id}
-                                            tabIndex={-1}
-                                            role="checkbox"
-                                            selected={isItemSelected}
-                                            aria-checked={isItemSelected}
-                                        >
-                                            <TableCell padding="checkbox">
-                                                <Checkbox checked={isItemSelected}
-                                                          onChange={(event) => handleClick(event, name)}/>
-                                            </TableCell>
-                                            <TableCell component="th" scope="row" padding="none">
-                                                <Stack direction="row" alignItems="center" spacing={2}>
-                                                    <Avatar alt={name} src={avatarUrl}/>
-                                                    <Typography variant="subtitle2" noWrap>
-                                                        {name}
-                                                    </Typography>
-                                                </Stack>
-                                            </TableCell>
-                                            <TableCell align="left">{country}</TableCell>
-                                            <TableCell align="left">{role}</TableCell>
-                                            <TableCell align="left">{isVerified ? 'Yes' : 'No'}</TableCell>
-                                            <TableCell align="left">
-                                                <Label variant="ghost"
-                                                       color={(status === 'banned' && 'error') || 'success'}>
-                                                </Label>
-                                            </TableCell>
+                                        return (
+                                            <TableRow
+                                                hover
+                                                key={id}
+                                                tabIndex={-1}
+                                                role="checkbox"
+                                                selected={isItemSelected}
+                                                aria-checked={isItemSelected}
+                                            >
+                                                <TableCell padding="checkbox">
+                                                    <Checkbox checked={isItemSelected}
+                                                              onChange={(event) => handleClick(event, name)}/>
+                                                </TableCell>
+                                                <TableCell component="th" scope="row" padding="none">
+                                                    <Stack direction="row" alignItems="center" spacing={2}>
+                                                        <Avatar alt={name} src={avatarUrl}/>
+                                                        <Typography variant="subtitle2" noWrap>
+                                                            {name}
+                                                        </Typography>
+                                                    </Stack>
+                                                </TableCell>
+                                                <TableCell align="left">{country}</TableCell>
+                                                <TableCell align="left">{role}</TableCell>
+                                                <TableCell align="left">{isVerified ? 'Yes' : 'No'}</TableCell>
+                                                <TableCell align="left">
+                                                    <Label variant="ghost"
+                                                           color={(status === 'banned' && 'error') || 'success'}>
+                                                    </Label>
+                                                </TableCell>
 
-                                            <TableCell align="right">
-                                                <UserMoreMenu/>
-                                            </TableCell>
-                                        </TableRow>
-                                    );
-                                })}
-                                <TableRow style={{height: 53}}>
-                                    <TableCell colSpan={6}/>
-                                </TableRow>
-                            </TableBody>
+                                                <TableCell align="right">
+                                                    <UserMoreMenu/>
+                                                </TableCell>
+                                            </TableRow>
+                                        );
+                                    })}
+                                    <TableRow style={{height: 53}}>
+                                        <TableCell colSpan={6}/>
+                                    </TableRow>
+                                </TableBody>
 
-                        </Table>
-                    </TableContainer>
+                            </Table>
+                        </TableContainer>
 
-                    <TablePagination
-                        rowsPerPageOptions={[5, 10, 25]}
-                        component="div"
-                        count={data?.data?.length || 0}
-                        rowsPerPage={rowsPerPage}
-                        page={page}
-                        onPageChange={handleChangePage}
-                        onRowsPerPageChange={handleChangeRowsPerPage}
-                    />
+                        <TablePagination
+                            rowsPerPageOptions={[5, 10, 25]}
+                            component="div"
+                            count={data?.data?.length || 0}
+                            rowsPerPage={rowsPerPage}
+                            page={page}
+                            onPageChange={handleChangePage}
+                            onRowsPerPageChange={handleChangeRowsPerPage}
+                        />
 
-                </Card>
-            </Container>
-        </Page>
+                    </Card>
+                </Container>
+            </Page>
+        </>
     );
 }
