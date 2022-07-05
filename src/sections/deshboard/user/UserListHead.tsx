@@ -3,10 +3,9 @@ import React, {MouseEvent} from "react";
 import {Table} from "$pages/User";
 
 export type direction = 'asc' | 'desc'
-export type SortDirection = 'asc' | 'desc' | undefined
 
 export interface UserListHead {
-    order: SortDirection | direction
+    order: direction
     orderBy: string
     rowCount: number
     headLabel: Table[]
@@ -60,8 +59,8 @@ export default function UserListHead(
                             active={orderBy === headCell?.id}
                             direction={orderBy === headCell.id ? order : 'asc'}
                             onClick={createSortHandler(headCell?.id)}
-                        >
-                            {orderBy === headCell?.id ? (
+                        > {headCell.label}
+                            {orderBy === headCell.id ? (
                                 <Box
                                     sx={{...visuallyHidden}}>{order === 'desc' ? 'sorted descending' : 'sorted ascending'}</Box>
                             ) : null}

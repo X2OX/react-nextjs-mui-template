@@ -21,7 +21,7 @@ import Iconify from '$components/Iconify';
 import {RequestData} from "$client/request";
 import UserMoreMenu from "$sections/deshboard/user/UserMoreMenu";
 import UserListToolbar from "$sections/deshboard/user/UserListToolbar";
-import UserListHead, {direction, SortDirection} from "$sections/deshboard/user/UserListHead";
+import UserListHead, {direction} from "$sections/deshboard/user/UserListHead";
 
 export interface Table {
     id: string
@@ -31,7 +31,7 @@ export interface Table {
 
 const TABLE_HEAD: Table[] = [
     {id: 'name', label: 'Name', alignRight: false},
-    {id: 'company', label: 'Country', alignRight: false},
+    {id: 'country', label: 'Country', alignRight: false},
     {id: 'role', label: 'Role', alignRight: false},
     {id: 'isVerified', label: 'Verified', alignRight: false},
     {id: 'status', label: 'Status', alignRight: false},
@@ -40,7 +40,7 @@ const TABLE_HEAD: Table[] = [
 
 export default function User() {
     const [page, setPage] = useState(0);
-    const [order, setOrder] = useState<SortDirection | direction>('asc');
+    const [order, setOrder] = useState<direction>('asc');
     const [selected, setSelected] = useState<any>([]);
     const [orderBy, setOrderBy] = useState('name');
     const [filterName, setFilterName] = useState('');
@@ -85,7 +85,6 @@ export default function User() {
         setPage(0);
     };
     const handleFilterByName = (event: React.ChangeEvent<HTMLInputElement>) => setFilterName(event.target.value);
-    const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - data?.data?.length!) : 0;
 
     return (
         <Page title="User">
@@ -147,7 +146,6 @@ export default function User() {
                                             <TableCell align="left">
                                                 <Label variant="ghost"
                                                        color={(status === 'banned' && 'error') || 'success'}>
-                                                    {/*{sentenceCase(status)}*/}
                                                 </Label>
                                             </TableCell>
 
@@ -157,20 +155,11 @@ export default function User() {
                                         </TableRow>
                                     );
                                 })}
-                                {emptyRows > 0 && (
-                                    <TableRow style={{height: 53 * emptyRows}}>
-                                        <TableCell colSpan={6}/>
-                                    </TableRow>
-                                )}
-                            </TableBody>
-
-                            <TableBody>
-                                <TableRow>
-                                    <TableCell align="center" colSpan={6} sx={{py: 3}}>
-                                        {/*<SearchNotFound searchQuery={filterName}/>*/}
-                                    </TableCell>
+                                <TableRow style={{height: 53}}>
+                                    <TableCell colSpan={6}/>
                                 </TableRow>
                             </TableBody>
+
                         </Table>
                     </TableContainer>
 
