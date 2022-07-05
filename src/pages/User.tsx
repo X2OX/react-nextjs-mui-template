@@ -22,6 +22,7 @@ import {RequestData} from "$client/request";
 import UserMoreMenu from "$sections/deshboard/user/UserMoreMenu";
 import UserListToolbar from "$sections/deshboard/user/UserListToolbar";
 import UserListHead, {direction} from "$sections/deshboard/user/UserListHead";
+import UserLayout from "$Layout/UserLayout";
 
 export interface Table {
     id: string
@@ -38,7 +39,7 @@ const TABLE_HEAD: Table[] = [
     {id: ''},
 ];
 
-export default function User() {
+const User = () => {
     const [page, setPage] = useState(0);
     const [order, setOrder] = useState<direction>('asc');
     const [selected, setSelected] = useState<any>([]);
@@ -180,3 +181,13 @@ export default function User() {
         </>
     );
 }
+
+User.getLayout = function getLayout(page: React.ReactElement) {
+    return (
+        <UserLayout>
+            {page}
+        </UserLayout>
+    )
+}
+
+export default User

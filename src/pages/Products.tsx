@@ -5,8 +5,10 @@ import ProductList from "$sections/deshboard/products/ProductList";
 import ProductSort from "$sections/deshboard/products/ProductSort";
 import {Product} from "$pages/api/product";
 import {RequestData} from "$client/request";
+import React from "react";
+import UserLayout from "$Layout/UserLayout";
 
-export default function EcommerceShop() {
+const Products = () => {
     const {data} = useSWR('/api/product', RequestData<Product>)
     return (
         <Page title="Dashboard: Products">
@@ -27,3 +29,13 @@ export default function EcommerceShop() {
         </Page>
     );
 }
+
+Products.getLayout = function getLayout(page: React.ReactElement) {
+    return (
+        <UserLayout>
+            {page}
+        </UserLayout>
+    )
+}
+
+export default Products
