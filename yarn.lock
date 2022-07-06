@@ -294,18 +294,18 @@
     react-transition-group "^4.4.2"
     rifm "^0.12.1"
 
-"@mui/material@^5.8.6":
-  version "5.8.6"
-  resolved "https://registry.yarnpkg.com/@mui/material/-/material-5.8.6.tgz#4019fbf1b95d8ea9f397efaed835ac92a6d8f22d"
-  integrity sha512-9fo5AiNHs+HY5ArMzsDMFrAmJSRw90y/qu81oDIszgK7Bfrm8GuI7Eb0mO6WADWPEyKOzOov/WZsm4G6jPEM4g==
+"@mui/material@^5.8.7":
+  version "5.8.7"
+  resolved "https://registry.yarnpkg.com/@mui/material/-/material-5.8.7.tgz#28617c5b8a9e354e300f19fc38e1286ba1e15ad3"
+  integrity sha512-Oo62UhrgEi+BMLr3nUEASJgScE2/hhq14CbBUmrVV3GQlEGtqMZsy26Vb0AqEmphFeN3TXlsbM9aeW5yq8ZFlw==
   dependencies:
     "@babel/runtime" "^7.17.2"
-    "@mui/base" "5.0.0-alpha.87"
-    "@mui/system" "^5.8.6"
+    "@mui/base" "5.0.0-alpha.88"
+    "@mui/system" "^5.8.7"
     "@mui/types" "^7.1.4"
     "@mui/utils" "^5.8.6"
-    "@types/react-transition-group" "^4.4.4"
-    clsx "^1.1.1"
+    "@types/react-transition-group" "^4.4.5"
+    clsx "^1.2.0"
     csstype "^3.1.0"
     prop-types "^15.8.1"
     react-is "^17.0.2"
@@ -524,7 +524,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-transition-group@^4.4.4":
+"@types/react-transition-group@^4.4.5":
   version "4.4.5"
   resolved "https://registry.yarnpkg.com/@types/react-transition-group/-/react-transition-group-4.4.5.tgz#aae20dcf773c5aa275d5b9f7cdbca638abc5e416"
   integrity sha512-juKD/eiSM3/xZYzjuzH6ZwpP+/lejltmiS3QEzV/vmb/Q8+HfDmxu+Baga8UEMGBqV88Nbg4l2hY/K2DkyaLLA==
