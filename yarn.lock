@@ -278,17 +278,17 @@
   dependencies:
     "@babel/runtime" "^7.17.2"
 
-"@mui/lab@^5.0.0-alpha.88":
-  version "5.0.0-alpha.88"
-  resolved "https://registry.yarnpkg.com/@mui/lab/-/lab-5.0.0-alpha.88.tgz#bead71c8153135e45f2268ef804dbfea92638c38"
-  integrity sha512-YS2NPw0D0CHG9z9Y6Wjocl3g2LNzdXdkvORPoyc05ea9Xm+m8buddvMeTuL/r/e3S7yLK8HOMN2uHE0rwD/oVQ==
+"@mui/lab@^5.0.0-alpha.89":
+  version "5.0.0-alpha.89"
+  resolved "https://registry.yarnpkg.com/@mui/lab/-/lab-5.0.0-alpha.89.tgz#cc61560f16eebc3f44890835ee22cdc560ce4d48"
+  integrity sha512-u5bMi/V+Utwouo9awVzGasj/LudlRqPFyMo2L5/y60uFo0EaG17bt1jh/U7smQCdjd+7tvJ39HNMkEmIoGr7BQ==
   dependencies:
     "@babel/runtime" "^7.17.2"
-    "@mui/base" "5.0.0-alpha.87"
-    "@mui/system" "^5.8.6"
+    "@mui/base" "5.0.0-alpha.88"
+    "@mui/system" "^5.8.7"
     "@mui/utils" "^5.8.6"
     "@mui/x-date-pickers" "5.0.0-alpha.1"
-    clsx "^1.1.1"
+    clsx "^1.2.0"
     prop-types "^15.8.1"
     react-is "^17.0.2"
     react-transition-group "^4.4.2"
