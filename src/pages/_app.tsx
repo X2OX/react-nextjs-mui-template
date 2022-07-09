@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {ReactElement, ReactNode} from 'react';
+import ThemeProvider from '$theme/ThemeProvider'
 import {AppProps} from 'next/app';
 import {NextPage} from "next";
 
@@ -13,5 +14,9 @@ type AppPropsWithLayout = AppProps & {
 
 export default function MyApp({Component, pageProps}: AppPropsWithLayout) {
     const getLayout = Component.getLayout ?? ((page) => page)
-    return getLayout(<Component {...pageProps} />)
+    return (
+        <ThemeProvider>
+            {getLayout(<Component {...pageProps} />)}
+        </ThemeProvider>
+    )
 }
