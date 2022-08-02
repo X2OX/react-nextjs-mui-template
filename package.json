@@ -15,7 +15,7 @@
     "@emotion/styled": "^11.10.0",
     "@mui/icons-material": "^5.8.4",
     "@mui/lab": "^5.0.0-alpha.92",
-    "@mui/material": "^5.9.2",
+    "@mui/material": "^5.9.3",
     "formik": "^2.2.9",
     "next": "12.2.3",
     "react": "18.2.0",
@@ -28,7 +28,7 @@
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
     "eslint": "8.21.0",
-    "eslint-config-next": "12.2.2",
+    "eslint-config-next": "12.2.3",
     "typescript": "4.7.4"
   }
 }
