@@ -64,11 +64,11 @@ const User = () => {
         setSelected([]);
     };
 
-    const handleClick = (_: React.ChangeEvent<HTMLInputElement>, name: string) => {
-        const selectedIndex: number = selected.indexOf(name);
+    const handleClick = (_: React.ChangeEvent<HTMLInputElement>, id: string) => {
+        const selectedIndex: number = selected.indexOf(id);
         let newSelected: any[] = [];
         if (selectedIndex === -1) {
-            newSelected = newSelected.concat(selected, name);
+            newSelected = newSelected.concat(selected, id);
         } else if (selectedIndex === 0) {
             newSelected = newSelected.concat(selected.slice(1));
         } else if (selectedIndex === selected.length - 1) {
@@ -105,8 +105,8 @@ const User = () => {
                         <UserListToolbar numSelected={selected.length} filterName={filterName}
                                          onFilterName={handleFilterByName}/>
 
-                        <TableContainer sx={{minWidth: 800}}>
-                            <Table>
+                        <TableContainer sx={{minWidth: 800, maxHeight: 600}}>
+                            <Table stickyHeader aria-label="sticky table">
                                 <UserListHead
                                     order={order}
                                     orderBy={orderBy}
@@ -119,7 +119,7 @@ const User = () => {
                                 <TableBody>
                                     {data?.data?.map((row: any) => {
                                         const {id, name, role, status, country, avatarUrl, isVerified} = row;
-                                        const isItemSelected = selected.indexOf(name) !== -1;
+                                        const isItemSelected = selected.indexOf(id) !== -1;
 
                                         return (
                                             <TableRow
@@ -132,7 +132,7 @@ const User = () => {
                                             >
                                                 <TableCell padding="checkbox">
                                                     <Checkbox checked={isItemSelected}
-                                                              onChange={(event) => handleClick(event, name)}/>
+                                                              onChange={(event) => handleClick(event, id)}/>
                                                 </TableCell>
                                                 <TableCell component="th" scope="row" padding="none">
                                                     <Stack direction="row" alignItems="center" spacing={2}>
