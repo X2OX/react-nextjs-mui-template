@@ -133,7 +133,7 @@ export default function NavSection({navConfig, ...other}: { navConfig: NavList[]
         <Box {...other}>
             <List disablePadding sx={{p: 1}}>
                 {navConfig.map((item) => (
-                    <NavItem key={item.title} item={item} active={!!pathname}/>
+                    <NavItem key={item.title} item={item} active={pathname === item.path}/>
                 ))}
             </List>
         </Box>
