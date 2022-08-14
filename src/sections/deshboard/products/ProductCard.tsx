@@ -49,18 +49,18 @@ export default function ProductCard({product}: props) {
 
                 <Stack direction="row" alignItems="center" justifyContent="space-between">
                     <Typography variant="subtitle1">
+                        <span style={{fontSize: '16px'}}>{price}</span>
+                        &nbsp;
                         <Typography
                             component="span"
                             variant="body1"
                             sx={{
                                 color: 'text.disabled',
+                                fontSize: '12px',
                                 textDecoration: 'line-through',
-                            }}
-                        >
+                            }}>
                             {priceSale}
                         </Typography>
-                        &nbsp;
-                        {price}
                     </Typography>
                 </Stack>
             </Stack>

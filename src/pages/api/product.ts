@@ -2,14 +2,14 @@ import {NextApiRequest, NextApiResponse} from "next";
 import UUID from "$utils/uuid";
 import {randomArr} from "$utils/random";
 
-export interface Product{
-    cover:string,
-    id:string,
-    name:string,
-    price:string,
-    priceSale:string,
-    colors:string[],
-    status:string
+export interface Product {
+    cover: string,
+    id: string,
+    name: string,
+    price: string,
+    priceSale: string,
+    colors: string[],
+    status: string
 }
 
 const PRODUCT_NAME = [
@@ -40,15 +40,15 @@ const PRODUCT_NAME = [
 ];
 const PRODUCT_COLOR = ['#00AB55', '#000000', '#FFFFFF', '#FFC0CB', '#FF4842', '#1890FF', '#94D82D', '#FFC107'];
 
-const products = [...Array(24)].map((_, index) :Product=> {
+const products = [...Array(24)].map((_, index): Product => {
     const setIndex = index + 1;
 
     return {
-        id:new UUID().toString(),
+        id: new UUID().toString(),
         cover: `/static/product/product_${setIndex}.jpg`,
         name: PRODUCT_NAME[index],
-        price: `${(setIndex * 10 + 99)/2}$`,
-        priceSale: `${(setIndex * 10 + 99)}$`,
+        price: `$${(setIndex * 10 + 99) / 2}`,
+        priceSale: `$${(setIndex * 10 + 99)}`,
         colors:
             (setIndex === 1 && PRODUCT_COLOR.slice(0, 2)) ||
             (setIndex === 2 && PRODUCT_COLOR.slice(1, 3)) ||
@@ -66,8 +66,8 @@ export default function ProductReq(
     res: NextApiResponse
 ) {
     res.status(200).json({
-        data:products,
-        code:0,
-        msg:''
+        data: products,
+        code: 0,
+        msg: ''
     })
 }
