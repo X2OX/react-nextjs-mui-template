@@ -23,12 +23,10 @@ const language: lanType[] = [
     },
 ];
 
-
 export default function LanguagePopover() {
     const anchorRef = useRef(null);
     const [open, setOpen] = useState(false);
     const [item, setItem] = useState('/static/icons/English.jpg');
-
     return (
         <>
             <IconButton
@@ -43,7 +41,7 @@ export default function LanguagePopover() {
                     }),
                 }}
             >
-                <Image height={55} width={80} src={item} alt={'country'}/>
+                <Image height={38} width={38} src={item} alt={'country'} style={{borderRadius: '50%'}}/>
             </IconButton>
 
             <MenuPopover
@@ -54,11 +52,11 @@ export default function LanguagePopover() {
                     mt: 1.5,
                     ml: 0.75,
                     width: 180,
-                    '& .MuiMenuItem-root': {px: 1, typography: 'body2', borderRadius: 0.75}
+                    '& .MuiMenuItem-root': {px: 1, typography: 'body2'}
                 }}>
                 <Stack spacing={0.75}>
                     {language.map((option) => (
-                        <MenuItem key={option.value} selected={option.value === language[0].value}
+                        <MenuItem key={option.value} selected={option.icon === item}
                                   onClick={() => {
                                       setItem(option.icon)
                                       setOpen(false)
