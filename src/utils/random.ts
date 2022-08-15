@@ -1,4 +1,4 @@
-export function randomArr(arr:Array<string>):string{
-    const idx = Math.ceil(Math.random() * arr.length)
+export function randomArr(arr:Array<string | any>){
+    const idx = Math.floor(Math.random() * arr.length)
     return arr[idx]
 }

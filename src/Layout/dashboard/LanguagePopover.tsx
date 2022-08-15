@@ -4,13 +4,13 @@ import {alpha} from '@mui/material/styles';
 import {Box, IconButton, MenuItem, Stack} from '@mui/material';
 import MenuPopover from '$components/MenuPopover';
 
+interface lanType {
+    value: string
+    label: string
+    icon: string
+}
 
-const language = [
-    {
-        value: 'Ch',
-        label: 'China',
-        icon: '/static/icons/China.webp',
-    },
+const language: lanType[] = [
     {
         value: 'en',
         label: 'English',
@@ -23,24 +23,15 @@ const language = [
     },
 ];
 
-
 export default function LanguagePopover() {
     const anchorRef = useRef(null);
     const [open, setOpen] = useState(false);
-
-    const handleOpen = () => {
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
-
+    const [item, setItem] = useState('/static/icons/English.jpg');
     return (
         <>
             <IconButton
                 ref={anchorRef}
-                onClick={handleOpen}
+                onClick={() => setOpen(true)}
                 sx={{
                     padding: 0,
                     width: 44,
@@ -50,26 +41,27 @@ export default function LanguagePopover() {
                     }),
                 }}
             >
-                <Image height={55} width={80} src={language[0].icon} alt={language[0].label}/>
+                <Image height={38} width={38} src={item} alt={'country'} style={{borderRadius: '50%'}}/>
             </IconButton>
 
             <MenuPopover
                 open={open}
-                onClose={handleClose}
+                onClose={() => setOpen(false)}
                 anchorEl={anchorRef.current}
                 sx={{
                     mt: 1.5,
                     ml: 0.75,
                     width: 180,
-                    '& .MuiMenuItem-root': {px: 1, typography: 'body2', borderRadius: 0.75},
-                }}
-            >
+                    '& .MuiMenuItem-root': {px: 1, typography: 'body2'}
+                }}>
                 <Stack spacing={0.75}>
                     {language.map((option) => (
-                        <MenuItem key={option.value} selected={option.value === language[0].value}
-                                  onClick={() => handleClose()}>
+                        <MenuItem key={option.value} selected={option.icon === item}
+                                  onClick={() => {
+                                      setItem(option.icon)
+                                      setOpen(false)
+                                  }}>
                             <Box component="img" alt={option.label} src={option.icon} sx={{width: 28, mr: 2}}/>
-
                             {option.label}
                         </MenuItem>
                     ))}
