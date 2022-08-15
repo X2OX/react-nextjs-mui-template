@@ -14,7 +14,7 @@
     "@emotion/server": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "@mui/icons-material": "^5.8.4",
-    "@mui/lab": "^5.0.0-alpha.93",
+    "@mui/lab": "^5.0.0-alpha.94",
     "@mui/material": "^5.9.3",
     "formik": "^2.2.9",
     "next": "12.2.4",
