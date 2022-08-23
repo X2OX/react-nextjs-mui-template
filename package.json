@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@iconify/react": "^3.2.2",
-    "@types/node": "18.6.4",
+    "@types/node": "18.7.9",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "eslint": "8.21.0",
