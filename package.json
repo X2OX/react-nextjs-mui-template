@@ -15,7 +15,7 @@
     "@emotion/styled": "^11.10.0",
     "@mui/icons-material": "^5.8.4",
     "@mui/lab": "^5.0.0-alpha.93",
-    "@mui/material": "^5.9.3",
+    "@mui/material": "^5.10.1",
     "formik": "^2.2.9",
     "next": "12.2.4",
     "react": "18.2.0",
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@iconify/react": "^3.2.2",
-    "@types/node": "18.7.9",
+    "@types/node": "18.7.10",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "eslint": "8.21.0",
